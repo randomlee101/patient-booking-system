@@ -1,5 +1,15 @@
-from ..controller import UserController
+from src.controller import UserController
+from src.models import UserModel, UserList
 
 
 class UserView:
-    pass
+
+    @staticmethod
+    def register():
+        print(UserController.register())
+        print(UserController.register())
+        print(UserList.viewAllUsers())
+
+
+if __name__ == "__main__":
+    UserView.register()

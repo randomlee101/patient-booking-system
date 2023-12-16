@@ -1,4 +1,4 @@
-from ..models import MedicalRecord
+from src.models import MedicalRecord
 
 
 class MedicalRecordController:

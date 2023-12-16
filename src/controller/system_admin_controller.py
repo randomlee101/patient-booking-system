@@ -1,4 +1,4 @@
-from ..models import SystemAdministrator
+from src.models import SystemAdministrator
 
 
 class SystemAdminController:

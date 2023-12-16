@@ -1,4 +1,4 @@
-from .user import UserModel
+from .user import UserModel, UserList
 from .doctor import Doctor
 from .patient import Patient
 from .appointment import Appointment

@@ -1,4 +1,4 @@
-from ..models import Patient
+from src.models import Patient
 
 
 class PatientController:

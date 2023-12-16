@@ -1,4 +1,4 @@
-from ..models import Appointment
+from src.models import Appointment
 
 
 class AppointmentController:

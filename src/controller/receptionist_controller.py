@@ -1,4 +1,4 @@
-from ..models import Receptionist
+from src.models import Receptionist
 
 
 class ReceptionistController:
