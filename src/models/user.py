@@ -10,7 +10,15 @@ class UserModel:
 
     @staticmethod
     def login(username, password):
-        return True
+        user = UserList.findUserByUserName(username)
+        if user is None:
+            return "Invalid Credentials"
+        password_match = user.password == password
+        if not password_match:
+            return "Invalid Credentials"
+
+        UserList.currentUser = user
+        return user
 
     def register(self):
         UserList.addUser(self)
@@ -26,6 +34,7 @@ class UserModel:
 
 
 class UserList:
+    currentUser = None
     users = []
 
     @staticmethod
@@ -39,3 +48,11 @@ class UserList:
     @staticmethod
     def viewAllUsers():
         return UserList.users
+
+    @staticmethod
+    def findUserByUserName(username):
+        allUsers = UserList.users
+        for user in allUsers:
+            if user.username == username:
+                return user
+        return None
