@@ -1,60 +1,91 @@
-Class Diagram Revision
+# Patient Booking System
 
-+-------------------+          +-------------------+            +-------------------+
-|     UserModel     |          |      UserList     |            |      Doctor       |
-+-------------------+          +-------------------+            +-------------------+
-| - user_id: int     |          | - currentUser:    |            |                   |
-| - username: str    |   1      |   UserModel       |            |                   |
-| - password: str    |---------<| - users: List[     |            |                   |
-| - role: str        |          |   UserModel]      |            |                   |
-|-------------------|          |-------------------|            |                   |
-| + login(username, |          | + addUser(user:   |            |                   |
-|     password):    |          |     UserModel):    |            | + setAvailability()|
-| + register():     |          | + countUsers():    |            | + viewAvailability()|
-| + updateProfile():|          | + viewAllUsers():  |            | + cancelAvailability()|
-| + __str__():      |          | + findUserByUserName()         | + viewMedicalRecords()|
-| + __repr__():     |          |-------------------|            | + viewAssignedAppointments()|
-|                   |          |                                   | + viewAssignedPatients()|
-+-------------------+          +-------------------+            | + updatePatientRecord()|
-                                   ^                               +-------------------+
-                                   |
-+------------------------+ +------------------------+             +----------------------+
-|    Receptionist       | | SystemAdministrator    |             |     MedicalRecord    |
-+------------------------+ +------------------------+             +----------------------+
-|                        | |                        |             | - recordID: int      |
-| + checkDoctorAvaila-  | | + userManagement()     |             | - patient: Patient   |
-|   bility()            | | + manageMedicalHistory-|             | - data: string       |
-| + bookAppointment()    | |   Tracking()           |             |                      |
-| + manageAppointment()  | | + manageMedicalRecord()|             | + updateRecord(data) |
-| + assignPatientToDoctor| | + manageAppointments()  |             +----------------------+
-+------------------------+ +------------------------+
-                                   ^
-                                   |
-+--------------------------+      +--------------------------+
-|        Patient           |      |        Doctor            |
-+--------------------------+      +--------------------------+
-|                          |      |                          |
-| + bookAppointment()      |      | + setAvailability()      |
-| + manageAppointment()    |      | + viewAvailability()     |
-| + viewMedicalRecords()   |      | + cancelAvailability()   |
-| + viewAppointments()     |      | + viewMedicalRecords()   |
-+--------------------------+      | + viewAssignedAppointments|
-                                   | + viewAssignedPatients() |
-                                   | + updatePatientRecord()  |
-                                   +--------------------------+
-                                                    ^
-                                                    |
-                                            +----------------------+
-                                            |      Appointment     |
-                                            +----------------------+
-                                            | - appointment_id: int|
-                                            | - patient: Patient   |
-                                            | - time: string       |
-                                            | - reason: string     |
-                                            | - doctor: Doctor     |
-                                            +----------------------+
-                                            | + schedule()         |
-                                            | + reschedule(time)   |
-                                            | + cancel()           |
-                                            | + view()             |
-                                            +----------------------+
+
+    UserModel
+
+ - user_id: int     
+ - username: str    
+ - password: str    
+ - role: str        
+-------------------
+ + login(username, 
+     password):    
+ + register():     
+ + updateProfile():
+ + __str__():      
+ + __repr__():     
+
+
+      UserList     
+
+ - currentUser:UserModel       
+ - users: List[UserModel]      
+-------------------
+ + addUser(user:   
+   UserModel):    
+ + countUsers():    
+ + viewAllUsers():  
+ + findUserByUserName()
+
+
+      Doctor       
+
+                   
+ + setAvailability()
+ + viewAvailability()
+ + cancelAvailability()
+ + viewMedicalRecords()
+ + viewAssignedAppointments()
+ + viewAssignedPatients()
+ + updatePatientRecord()
+
+
+      Patient     
+
+                  
+ + bookAppointment
+ + manageAppointment
+ + viewMedicalRecords()
+ + viewAppointments()
+
+
+    Receptionist       
+
+ + checkDoctorAvailability()            
+ + bookAppointment()    
+ + manageAppointment()  
+ + assignPatientToDoctor
+
+
+    SystemAdministrator    
+
+ + userManagement()     
+ + manageMedicalHistoryTracking()           
+ + manageMedicalRecord()
+ + manageAppointments()  
+
+
+     MedicalRecord    
+
+ - recordID: int      
+ - patient: Patient   
+ - data: string  
+----------------------
+ + updateRecord(data) 
+
+
+      Appointment     
+
+ - appointment_id: int
+ - patient: Patient   
+ - time: string       
+ - reason: string     
+ - doctor: Doctor    
+------------------------------
+ + schedule()         
+ + reschedule(time)   
+ + cancel()           
+ + view()             
+
+
+
