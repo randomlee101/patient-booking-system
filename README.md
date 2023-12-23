@@ -1,36 +1,31 @@
 # Patient Booking System
 
 
-    UserModel
+## UserModel
 
  - user_id: int     
  - username: str    
  - password: str    
  - role: str        
 -------------------
- + login(username, 
-     password):    
+ + login(username, password):    
  + register():     
  + updateProfile():
  + __str__():      
  + __repr__():     
 
-
-      UserList     
+## UserList     
 
  - currentUser:UserModel       
  - users: List[UserModel]      
 -------------------
- + addUser(user:   
-   UserModel):    
- + countUsers():    
- + viewAllUsers():  
+ + addUser(user:UserModel)   
+ + countUsers()  
+ + viewAllUsers() 
  + findUserByUserName()
 
 
-      Doctor       
-
-                   
+##  Doctor
  + setAvailability()
  + viewAvailability()
  + cancelAvailability()
@@ -39,8 +34,7 @@
  + viewAssignedPatients()
  + updatePatientRecord()
 
-
-      Patient     
+## Patient     
 
                   
  + bookAppointment
@@ -49,7 +43,7 @@
  + viewAppointments()
 
 
-    Receptionist       
+## Receptionist       
 
  + checkDoctorAvailability()            
  + bookAppointment()    
@@ -57,7 +51,7 @@
  + assignPatientToDoctor
 
 
-    SystemAdministrator    
+## SystemAdministrator    
 
  + userManagement()     
  + manageMedicalHistoryTracking()           
@@ -65,7 +59,7 @@
  + manageAppointments()  
 
 
-     MedicalRecord    
+## MedicalRecord    
 
  - recordID: int      
  - patient: Patient   
@@ -74,7 +68,7 @@
  + updateRecord(data) 
 
 
-      Appointment     
+## Appointment     
 
  - appointment_id: int
  - patient: Patient   
