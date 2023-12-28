@@ -1,7 +1,7 @@
-from . import UserModel
+from . import UserModel, Appointment, MedicalRecord
 
 
-class SystemAdministrator(UserModel):
+class SystemAdministrator(UserModel, Appointment, MedicalRecord):
     pass
 
     def userManagement(self):
@@ -13,6 +13,6 @@ class SystemAdministrator(UserModel):
     def manageMedicalRecord(self):
         pass
 
-    def manageAppointments(self):
+    def manageAppointments(self, action):
         pass
 

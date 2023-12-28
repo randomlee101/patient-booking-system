@@ -23,5 +23,5 @@ class Doctor(UserModel):
     def viewAssignedPatients(self):
         pass
 
-    def updatePatientRecord(self):
+    def updatePatientRecord(self, patient):
         pass

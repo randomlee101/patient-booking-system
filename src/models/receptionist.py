@@ -1,7 +1,7 @@
-from . import UserModel
+from . import UserModel, Appointment
 
 
-class Receptionist(UserModel):
+class Receptionist(UserModel, Appointment):
     pass
 
     def checkDoctorAvailability(self):
@@ -10,7 +10,7 @@ class Receptionist(UserModel):
     def bookAppointment(self):
         pass
 
-    def manageAppointment(self):
+    def manageAppointment(self, action):
         pass
 
     def assignPatientToDoctor(self):

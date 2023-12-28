@@ -7,12 +7,5 @@ class Patient(UserModel):
     def bookAppointment(self):
         pass
 
-    def manageAppointment(self):
+    def manageAppointment(self, action):
         pass
-
-    def viewMedicalRecords(self):
-        pass
-
-    def viewAppointments(self):
-        pass
-

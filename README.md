@@ -32,22 +32,20 @@
  + viewMedicalRecords()
  + viewAssignedAppointments()
  + viewAssignedPatients()
- + updatePatientRecord()
+ + updatePatientRecord(patient:Patient)
 
 ## Patient     
 
                   
- + bookAppointment
- + manageAppointment
- + viewMedicalRecords()
- + viewAppointments()
+ + bookAppointment()
+ + manageAppointment()
 
 
 ## Receptionist       
 
  + checkDoctorAvailability()            
  + bookAppointment()    
- + manageAppointment()  
+ + manageAppointment(action: string)  
  + assignPatientToDoctor
 
 
@@ -56,16 +54,18 @@
  + userManagement()     
  + manageMedicalHistoryTracking()           
  + manageMedicalRecord()
- + manageAppointments()  
+ + manageAppointments(action: string)  
 
 
 ## MedicalRecord    
 
  - recordID: int      
  - patient: Patient   
- - data: string  
+ - data: [string]  
 ----------------------
- + updateRecord(data) 
+ + updateRecord(patient: Patient,data: string) 
+ + createRecord()
+ + viewRecord(patient: Patient)
 
 
 ## Appointment     
